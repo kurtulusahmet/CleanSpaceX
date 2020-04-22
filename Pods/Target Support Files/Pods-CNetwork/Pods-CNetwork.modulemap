@@ -1,0 +1,6 @@
+module Pods_CNetwork {
+  umbrella header "Pods-CNetwork-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,13 @@
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Kingfisher"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/KRActivityIndicatorView" "${PODS_CONFIGURATION_BUILD_DIR}/KRProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/KRProgressHUD/KRProgressHUD.modulemap" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.modulemap"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Alamofire" -l"KRActivityIndicatorView" -l"KRProgressHUD" -l"Kingfisher" -framework "CFNetwork"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/KRProgressHUD/KRProgressHUD.modulemap" -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher/Kingfisher.modulemap"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/..
+PODS_ROOT = ${SRCROOT}/../Pods
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/KRActivityIndicatorView" "${PODS_CONFIGURATION_BUILD_DIR}/KRProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher"
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES
