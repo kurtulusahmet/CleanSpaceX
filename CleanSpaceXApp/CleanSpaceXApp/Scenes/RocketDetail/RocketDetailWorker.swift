@@ -14,18 +14,18 @@ import UIKit
 import CNetwork
 
 class RocketDetailWorker {
+    var rocketStore: RocketStoreProtocol
+    
+    init(rocketStore: RocketStoreProtocol) {
+      self.rocketStore = rocketStore
+    }
+    
     func fetchRocket(request: RocketDetail.FetchRocket.Request, completion: @escaping ((_ response: RocketsResponseModel?, _ error: CNetworkError?) -> Void)) {
-        
-        guard let rocketId = request.rocketId else {
-            return
-        }
-        
-        CNetwork.shared.execute(requestRoute: CNetworkRouter.rocket(rocketID: rocketId), responseModel: RocketsResponseModel.self) { result in
-            switch result {
-            case .success(let rocket):
-                completion(rocket, nil)
-            case .failure(let error):
+        self.rocketStore.fetchRocket(request: request) { (rocket, error) in
+            if error != nil {
                 completion(nil, error)
+            } else {
+                completion(rocket, nil)
             }
         }
     }

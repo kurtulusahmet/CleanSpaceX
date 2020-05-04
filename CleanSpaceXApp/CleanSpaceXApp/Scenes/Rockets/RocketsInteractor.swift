@@ -24,12 +24,11 @@ class RocketsInteractor: RocketsBusinessLogic, RocketsDataStore {
     var rockets: [RocketsResponseModel]?
     
     var presenter: RocketsPresentationLogic?
-    var worker: RocketsWorker?
+    var worker = RocketsWorker(rocketStore: RocketsAPI())
     
     // MARK: Fetch Rockets
     func fetchRockets(request: Rockets.FetchRockets.Request) {
-        worker = RocketsWorker()
-        worker?.fetchRockets(completion: { (rockets, error) in
+        worker.fetchRockets(completion: { (rockets, error) in
             if error != nil {
                 //TODO: Bu kısımda hata mesajını ekranda göstermek için Clean Swift döngüsü çalıştırabilirsiniz.
             } else {

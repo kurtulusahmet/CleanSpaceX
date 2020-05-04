@@ -1,0 +1,6 @@
+module Pods_CleanSpaceXAppTests {
+  umbrella header "Pods-CleanSpaceXAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -26,3 +26,8 @@ target 'CNetwork' do
   xcodeproj 'CNetwork/CNetwork.xcodeproj'
   api_pods
 end
+
+target 'CleanSpaceXAppTests' do
+  xcodeproj 'CleanSpaceXApp/CleanSpaceXApp.xcodeproj'
+  client_pods
+end

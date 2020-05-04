@@ -29,7 +29,7 @@ class RocketDetailInteractor: RocketDetailBusinessLogic, RocketDetailDataStore {
     // MARK: Fetch Rocket
     func fetchRocket(request: RocketDetail.FetchRocket.Request) {
         
-        worker = RocketDetailWorker()
+        worker = RocketDetailWorker(rocketStore: RocketsAPI())
         var request = request
         request.rocketId = rocket.rocketID
         
